@@ -7,17 +7,17 @@ footer{
 }
 
 i.profpic:before {
-    content: url('/img/icons/prof.png');
+    content: url('/img/icons/prof32.png');
  }
  
  i.mytrip:before {
-    content: url('/img/icons/trip.png')
+    content: url('/img/icons/trip32.png')
  }
  
  i.labyrinth:before {
-    content: url('/img/icons/map.png')
+    content: url('/img/icons/map32.png')
  }
  
  i.recocam:before {
-    content: url('/img/icons/cam.png')
+    content: url('/img/icons/cam32.png')
  }

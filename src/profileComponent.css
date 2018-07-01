@@ -1,4 +1,8 @@
 .profileComponent{
-    margin: 12vh auto 0 auto;
+    margin: 13vh auto 0 auto;
     width: 90%;
+}
+
+.profBut{
+    margin-bottom: 1vh !important;
 }
