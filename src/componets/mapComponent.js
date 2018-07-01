@@ -12,13 +12,27 @@ class MapComponent extends Component {
             },
             zoom: 11
         };
-        this.state = { lat: 35.34365 }
+        this.state = { lat: 35.34365 ,text:'none'}
     }
 
     addLat = () => {
         console.log('hi');
-        this.setState(prevSt=>({
-            lat:prevSt.lat+0.0005
+        this.setState(prevSt => ({
+            lat: prevSt.lat + 0.0005
+        }))
+    }
+
+    makeVisible = () => {
+        console.log('hi1');
+        this.setState(prevSt => ({
+            text:'block'
+        }))
+    }
+
+    makeNotVisible = () => {
+        console.log('hi2');
+        this.setState(prevSt => ({
+            text:'none'
         }))
     }
 
@@ -41,19 +55,56 @@ class MapComponent extends Component {
             </div>
         );
 
+        const KoulesComponent = ({ text }) => (
+            <img style={{
+                alignItems: 'center',
+                justifyContent: 'center',
+                transform: 'translate(-50%, -50%)'
+            }} src="/img/icons/koules.png" />
+        );
+
+        const ChanioportaComponent = ({ text }) => (
+            <img style={{
+                width: '32px',
+                height: '32px',
+                alignItems: 'center',
+                justifyContent: 'center',
+                transform: 'translate(-50%, -50%)'
+            }} src="/img/icons/chanioporta.png" />
+        );
+
+        const LoggiaComponent = ({ text }) => (
+            <img style={{
+                width: '32px',
+                height: '32px',
+                alignItems: 'center',
+                justifyContent: 'center',
+                transform: 'translate(-50%, -50%)'
+            }} src="/img/icons/loggia.png" />
+        );
+
+        const PouchComponent = ({ text }) => (
+            <img style={{
+                alignItems: 'center',
+                justifyContent: 'center',
+                transform: 'translate(-50%, -50%)',
+                display:this.state.text
+            }} src="/img/icons/treasure32.png" />
+        );
+
         this.props = {
             center: { lat: 35.34365, lng: 25.1362015 },
-            zoom: 17
+            zoom: 14
         };
 
         return (
             <div className="ui grid mapComponent">
                 <div className="three wide column">
                     <div className="ui vertical icon menu mapSidebar">
-                        <a className="item" onClick={this.addLat}>
+                        <a className="item" onClick={this.makeVisible}>
                             <i className="trophy icon"></i>
                         </a>
-                        <a className="item">
+                        <a className="item" onClick={this.makeNotVisible}>
                             <i className="map marker alternate camera icon"></i>
                         </a>
                         <a className="item">
@@ -70,11 +121,46 @@ class MapComponent extends Component {
                         defaultCenter={this.props.center}
                         defaultZoom={this.props.zoom}
                     >
-                        <AnyReactComponent
+                        <KoulesComponent
                             onClick={this.addLat}
-                            lat={this.state.lat}
-                            lng={25.13620}
-                            text={'Koules'}
+                            lat={35.344678}
+                            lng={25.136997}
+                        />
+
+                        <ChanioportaComponent
+                            onClick={this.addLat}
+                            lat={35.337006}
+                            lng={25.124860}
+                        />
+
+                        <LoggiaComponent
+                            onClick={this.addLat}
+                            lat={35.339841}
+                            lng={25.133981}
+                        />
+                        
+                        <PouchComponent
+                            onClick={this.addLat}
+                            lat={35.335452}
+                            lng={25.136887}
+                        />
+                        
+                        <PouchComponent
+                            onClick={this.addLat}
+                            lat={35.352109}
+                            lng={25.155973}
+                        />
+                        
+                        <PouchComponent
+                            onClick={this.addLat}
+                            lat={35.332671}
+                            lng={25.130362}
+                        />
+                        
+                        <PouchComponent
+                            onClick={this.addLat}
+                            lat={35.339061}
+                            lng={25.133198}
                         />
                     </GoogleMapReact>
                 </div>
