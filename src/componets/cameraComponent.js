@@ -1,20 +1,21 @@
 import React, { Component } from 'react';
 import Webcam from 'react-webcam';
 import '../cameraComponent.css';
+import UploadForm from './uploadForm'
 
 class CameraComponent extends Component {
     constructor(props) {
         super(props);
-        let facingMode = Boolean(localStorage.getItem('facingMode')==="true");
-        console.log('On...',facingMode);
+        let facingMode = Boolean(localStorage.getItem('facingMode') === "true");
+        console.log('On...', facingMode);
         this.state = { "imageSrc": '', facingMode };
     }
 
     changeFacingMode = () => {
         this.setState(prevSt => {
-            console.log('Off0.5',!prevSt.facingMode);
+            console.log('Off0.5', !prevSt.facingMode);
             localStorage.setItem('facingMode', !prevSt.facingMode);
-            console.log('Off...',localStorage.getItem('facingMode'));
+            console.log('Off...', localStorage.getItem('facingMode'));
             return { facingMode: !prevSt.facingMode }
         });
         window.location.reload();
@@ -56,6 +57,7 @@ class CameraComponent extends Component {
                 <div className="changeCamera">
                     <i className="circular inverted sync alternate big icon" onClick={this.changeFacingMode}></i>
                 </div>
+                <UploadForm/>
             </div>
         );
     }
