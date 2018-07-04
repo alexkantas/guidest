@@ -35,8 +35,8 @@ class PointsComponent extends Component {
             <Grid columns={3} divided>
               <Grid.Row>
                 <Grid.Column>
-                  <Image src='/img/koulespic.jpg' />
-                  <Image src='/img/short-paragraph.png' />
+                  <Image src='/img/koulespic.jpg' disabled/>
+                  <Image src='/img/short-paragraph.png'  />
                 </Grid.Column>
                 <Grid.Column>
                   <Image src='/img/loggiapic.jpg' />
@@ -49,15 +49,15 @@ class PointsComponent extends Component {
               </Grid.Row>
               <Grid.Row>
                 <Grid.Column>
-                  <Image src='/img/knossospic.jpg' />
+                  <Image src='/img/knossospic.jpg' disabled/>
                   <Image src='/img/short-paragraph.png' />
                 </Grid.Column>
                 <Grid.Column>
-                  <Image src='/img/sttitos.jpg' />
+                  <Image src='/img/sttitos.jpg' disabled/>
                   <Image src='/img/short-paragraph.png' />
                 </Grid.Column>
                 <Grid.Column>
-                  <Image src='/img/stminas.jpg' />
+                  <Image src='/img/stminas.jpg' disabled/>
                   <Image src='/img/short-paragraph.png' />
                 </Grid.Column>
               </Grid.Row>

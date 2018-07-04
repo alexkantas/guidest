@@ -6,6 +6,12 @@ footer{
     padding: 0!important;
 }
 
+.rootElement{
+    display: flex;
+    align-content: space-between;
+    flex-direction: column;
+}
+
 i.profpic:before {
     content: url('/img/icons/prof32.png');
  }

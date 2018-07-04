@@ -19,7 +19,7 @@ const visualRecognition = new VisualRecognitionV3({
 });
 
 app.use(cors());
-app.post('/', upload.single('vrimage'),
+app.post('*', upload.single('vrimage'),
     (req, res) => {
         console.log('Image 4', req.body);
         if (!req.file) {
